@@ -1,0 +1,6 @@
+@use 'pkg:sass-true' as *;
+@use './test' as test;
+
+$message: test.hello();
+
+@debug $message;
