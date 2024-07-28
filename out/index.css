@@ -1,0 +1,19 @@
+.test .test::before {
+  content: "Hello Some Sass!";
+}
+
+.test {
+  width: 100%;
+}
+
+.test::before {
+  content: "Hello Some Sass!";
+}
+
+.test::after {
+  content: "Hello Some Sass!";
+}
+
+.hello .test::before {
+  content: "Hello Some Sass!";
+}

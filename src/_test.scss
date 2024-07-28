@@ -1,0 +1,8 @@
+@use './utilities.scss' as utilities;
+@forward './greetings.scss' with (
+    $name: utilities.some-sass()
+);
+
+@function selector() {
+    @return '.test';
+}

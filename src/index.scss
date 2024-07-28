@@ -1,6 +1,26 @@
 @use 'pkg:sass-true' as *;
 @use './test' as test;
 
-$message: test.hello();
+$message: test.hello(test.$name);
+
+$test: "#{test.hello()}"; // it won't show the autocomplete here after the dot
+
+#{test.selector()} { // it won't show the autocomplete here after the dot
+    width: 100%;
+}
 
 @debug $message;
+
+@include test.hello();
+
+.test {
+    @extend %hello;
+
+    &::after {
+        content: $message;
+    }
+}
+
+.hello {
+    @include test.hello(test.$name);
+}

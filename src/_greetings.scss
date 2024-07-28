@@ -1,0 +1,15 @@
+$name: 'World' !default;
+
+@function hello($name: $name) {
+    @return 'Hello #{$name}!';
+}
+
+@mixin hello($name: $name) {
+    .test::before {
+        content: hello($name);
+    }
+}
+
+%hello {
+    @include hello($name);
+}
