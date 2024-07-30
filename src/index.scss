@@ -3,15 +3,21 @@
 
 $message: test.hello(test.$name);
 
-$test: "#{test.hello()}"; // it won't show the autocomplete here after the dot
+// work with the ctrl + space, but it shows everything, even mixins?
+$test: "#{test.hello()}"; 
 
-#{test.selector()} { // it won't show the autocomplete here after the dot
+// works correctly here, but it shows everything, even mixins?
+#{test.selector()} { 
     width: 100%;
 }
 
 @debug $message;
 
 @include test.hello();
+
+// works correctly here, but it only shows existing mixins
+// it should show the variable $name and the function name()
+@include test.hello(test.name());
 
 .test {
     @extend %hello;
