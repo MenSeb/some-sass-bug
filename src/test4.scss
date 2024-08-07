@@ -1,0 +1,4 @@
+@use './test3.scss' as *;
+
+// this works and suggestons are shown after typing "temp-"
+@debug temp-temp();

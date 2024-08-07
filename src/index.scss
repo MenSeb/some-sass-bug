@@ -1,20 +1,20 @@
 @use './test' as test;
+@use './utils' as *;
 
-// $name: "#{test.name()}";
-// #{test.selector()} { 
-//     width: 100%;
-// }
+$name: "#{test.name()}";
+
+@debug $name;
+
+#{test.selector()} { 
+    width: 100%;
+}
+
 // @debug test;
 // @error test;
 // @warn test;
 // @include test;
 // @include test.hello($name);
 
-// The custom logic is forwarded and shows suggestions
-@debug test.is-number(10);
-
-// The package pkg:sass-true is forwarded and shows suggestions
-@debug test.$catch-errors;
-
-// The package sass:meta is forwarded but it won't shows suggestions
-@debug test.type-of('string'); 
+// @debug test.is-number(10);
+// @debug test.$catch-errors;
+// @debug test.type-of('string'); 
