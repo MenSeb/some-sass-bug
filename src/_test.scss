@@ -1,7 +1,6 @@
-@use './utilities.scss' as utilities;
-@forward './greetings.scss' with (
-    $name: utilities.some-sass()
-);
+@forward 'pkg:sass-true';
+@forward 'sass:meta';
+@forward './sass';
 
 @function selector() {
     @return '.test';
@@ -9,4 +8,10 @@
 
 @function name() {
     @return 'Some Sass';
+}
+
+@mixin hello($name: name()) {
+    .test::after {
+        content: $name;
+    }
 }

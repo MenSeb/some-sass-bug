@@ -1,32 +1,20 @@
-@use 'pkg:sass-true' as *;
 @use './test' as test;
 
-$message: test.hello(test.$name);
+// $name: "#{test.name()}";
+// #{test.selector()} { 
+//     width: 100%;
+// }
+// @debug test;
+// @error test;
+// @warn test;
+// @include test;
+// @include test.hello($name);
 
-// work with the ctrl + space, but it shows everything, even mixins?
-$test: "#{test.hello()}"; 
+// The custom logic is forwarded and shows suggestions
+@debug test.is-number(10);
 
-// works correctly here, but it shows everything, even mixins?
-#{test.selector()} { 
-    width: 100%;
-}
+// The package pkg:sass-true is forwarded and shows suggestions
+@debug test.$catch-errors;
 
-@debug $message;
-
-@include test.hello();
-
-// works correctly here, but it only shows existing mixins
-// it should show the variable $name and the function name()
-@include test.hello(test.name());
-
-.test {
-    @extend %hello;
-
-    &::after {
-        content: $message;
-    }
-}
-
-.hello {
-    @include test.hello(test.$name);
-}
+// The package sass:meta is forwarded but it won't shows suggestions
+@debug test.type-of('string'); 
