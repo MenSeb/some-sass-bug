@@ -1,0 +1,12 @@
+@use './modules' as *;
+
+// It seems that the 'sass-true' package gets exposed.
+// The packages color and string are correctly shown 
+// under their prefix color- and string- from the @use.
+
+// This works correctly and is shown in suggestions
+@debug color-blue(#fff);
+@debug string-unique-id();
+
+// This is undefined and should not be shown in suggestions
+@debug $catch-errors;
