@@ -1,5 +1,0 @@
-@use './test3.scss' as test;
-
-// this works and suggestons are shown after typing "test."
-// the logic related to temp is correctly shown under the prefix "temp-"
-@debug test.temp-temp();

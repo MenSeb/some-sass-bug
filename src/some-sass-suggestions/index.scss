@@ -1,0 +1,25 @@
+@use '../modules' as *;
+
+/// A dummy variable.
+/// @type {String}
+$dummy: 'dummy';
+
+/// A dummy function.
+/// @return {String} - the `$suggestion` variable
+@function dummy() {
+    @return $dummy;
+}
+
+// This works correctly and is shown in suggestions
+@debug color-blue(#fff);
+@debug string-unique-id();
+
+// Typing "co" will trigger the color-* prefixed suggestions.
+// The "comparable" global function of the "sass:math" package is also shown.
+@debug comparable($number1: 1, $number2: 2);
+
+// Typing "dum" shows different suggestions with different configurations
+// try with suggestAllFromOpenDocument: true
+// try with suggestFromUseOnly: true
+// try with both to true or one to false, etc...
+// @debug dum

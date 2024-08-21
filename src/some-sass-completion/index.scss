@@ -1,0 +1,25 @@
+@use 'sass:math';
+@use '../modules' as *;
+@use '../utils' as *;
+
+/// Dummy function
+/// @param {Any} $value - the value to test
+/// @return {Any} - the `$value`
+@function dummy($value) {
+    @return $value;
+}
+
+// Typing dum and pressing tab completes like this
+// @debug dummy()
+
+// Typing tes and pressing tab completes like this
+// @debug test(value)
+
+// Typing math.compa and pressing tab completes like this
+// @debug math.compatible(number1, number2)
+
+// Typing compa and pressing tab completes like this
+// @debug comparable($number1: , $number2: )
+
+// Typing color-bl and pressing tab completes like this
+// @debug color-blue

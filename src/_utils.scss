@@ -1,5 +1,6 @@
-@forward 'sass:math' as math-*;
-
-@function utils() {
-    @return 'utils';
+/// Test a value
+/// @param {Any} $value - the value to test
+/// @return {Any} - the `$value`
+@function test($value) {
+    @return $value;
 }

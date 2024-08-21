@@ -1,0 +1,33 @@
+@use 'sass:math';
+@use 'sass:color';
+@use '../modules' as *;
+@use '../utils' as *;
+@use './test' as *;
+
+/// Dummy function
+/// @param {Any} $value - the value to test
+/// @return {Any} - the `$value`
+@function dummy($value) {
+    @return $value;
+}
+
+// This shows the information on hover
+@debug math.compatible(1, 2);
+
+// This shows the information on hover
+@debug test(10);
+
+// This shows the information on hover
+@debug dummy(10);
+
+// This does not show the information on hover
+@debug comparable($number1: 1, $number2: 2);
+
+// This does not show the information on hover
+@debug color-blue(#fff);
+
+// This shows the information on hover
+@debug color.blue(#fff);
+
+// This shows the information on hover
+@debug hover-hover();
